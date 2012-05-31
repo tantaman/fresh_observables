@@ -41,6 +41,20 @@
 					</archive>
 				</configuration>
 			</plugin>
+			
+			<plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+                <archive>
+                    <manifestEntries>
+                        <Premain-Class>com.tantaman.fresh_observables.agent.FreshObservablesAgent</Premain-Class>
+                    </manifestEntries>
+                </archive>
+                <descriptorRefs>
+                    <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
+            </configuration>
+        	</plugin>
 		</plugins>
 	</build>
 </project>

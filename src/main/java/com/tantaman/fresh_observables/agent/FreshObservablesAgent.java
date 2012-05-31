@@ -5,7 +5,8 @@ import java.lang.instrument.Instrumentation;
 import com.tantaman.fresh_observables.transformers.ObservablesTransformer;
 
 /*
- * java -javaagent:fresh_observables-1.0-SNAPSHOT.jar -cp ..\..\..\workspace-ecl\EATs\bin com.tantaman.eats.demo.gui.DemoApp
+ * mvn assembly:single
+java -cp .\fresh_observables-1.0-SNAPSHOT-jar-with-dependencies.jar -javaagent:fresh_observables-1.0-SNAPSHOT-jar-with-dependencies.jar com.tantaman.fresh_observables.examples.BasicExample
  */
 public class FreshObservablesAgent {
 	public static void premain(String agentArguments, Instrumentation instrumentation) {	
