@@ -119,7 +119,7 @@ public class ObservablesTransformer implements ClassFileTransformer {
 		}
 		
 		StringBuilder newMethodBodySrc = new StringBuilder();
-		newMethodBodySrc.append("{super.emit(" + observersMember + ", $args);").append("return " + newName + "($$);}");
+		newMethodBodySrc.append("{Object result = ($r)" + newName + "($$);").append("super.emit(" + observersMember + ", $args);").append("return ($r)result;}");
 		
 		CtMethod wrapperMethod = CtNewMethod.make(
 				previousModifiers,

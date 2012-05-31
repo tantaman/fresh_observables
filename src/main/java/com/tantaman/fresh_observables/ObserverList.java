@@ -19,6 +19,10 @@ public class ObserverList {
 		observers.remove(o);
 	}
 	
+	public void clear() {
+		observers.clear();
+	}
+	
 	public Collection<Callback> getObservers() {
 		return observers;
 	}

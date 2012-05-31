@@ -31,9 +31,8 @@ It couldn't get any easier.
 
 ###TODO###
  * Templated callbacks and registration.
- * Emit the change event after things have actually changed, not before
  * Don't emit change events if new value == old value
- * Pass along the object being observed to the callback
+ * Allow registration & de-registration via a registration context
 
 ###Usage###
 
