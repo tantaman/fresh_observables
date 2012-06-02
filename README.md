@@ -33,6 +33,7 @@ It couldn't get any easier.
  * Templated callbacks and registration.
  * Don't emit change events if new value == old value
  * Allow registration & de-registration via a registration context
+ * Create a branch that works on the Android platform
 
 ###Usage###
 
