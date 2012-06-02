@@ -48,6 +48,12 @@ Fresh Observables is built using maven.  To create a jar with all required depen
 
 `mvn assembly:single`
 
+or
+
+`mvn package` 
+
+to get a jar just with fresh_observables and no dependencies.
+
 
 ###Full Example###
 
