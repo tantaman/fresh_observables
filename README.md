@@ -34,6 +34,7 @@ It couldn't get any easier.
  * Allow registration & de-registration via a registration context
  * Allow registration for and emitting of custom events
  * Create a branch that works on the Android platform
+ * Make it so classes with observables don't have to extend observable
 
 ###Usage###
 
