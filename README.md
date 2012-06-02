@@ -31,8 +31,8 @@ It couldn't get any easier.
 
 ###TODO###
  * Templated callbacks and registration.
- * Don't emit change events if new value == old value
  * Allow registration & de-registration via a registration context
+ * Allow registration for and emitting of custom events
  * Create a branch that works on the Android platform
 
 ###Usage###
