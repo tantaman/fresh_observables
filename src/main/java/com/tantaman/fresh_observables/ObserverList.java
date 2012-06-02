@@ -6,6 +6,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
 
 public class ObserverList {
 	private final Set<Callback> observers;
+	private volatile Object[] lastValues;
 	
 	public ObserverList() {
 		observers = new CopyOnWriteArraySet<Callback>();
@@ -25,5 +26,13 @@ public class ObserverList {
 	
 	public Collection<Callback> getObservers() {
 		return observers;
+	}
+	
+	public void setLastValues(Object [] lastValues) {
+		this.lastValues = lastValues;
+	}
+	
+	public Object [] getLastValues() {
+		return this.lastValues;
 	}
 }

@@ -1,6 +1,7 @@
 package com.tantaman.fresh_observables;
 
 import java.lang.reflect.Field;
+import java.util.Arrays;
 
 public class Observable {
 	private final ObserverList globalObservers;
@@ -19,15 +20,21 @@ public class Observable {
 	// TODO: this is the naive implementation.  Obviously we need to do some checking
 	// on current and previous values to see if we should emit.
 	protected void emit(ObserverList observers, Object [] args) {
-		for (Callback cb : globalObservers.getObservers()) {
-			cb.call(this, args);
-		}
+		Object [] last = observers.getLastValues();
+		boolean changed = !Arrays.equals(last, args);
+		observers.setLastValues(args);
 		
-		for (Callback cb : observers.getObservers()) {
-			cb.call(this, args);
+		if (changed) {
+			for (Callback cb : globalObservers.getObservers()) {
+				cb.call(this, args);
+			}
+		
+			for (Callback cb : observers.getObservers()) {
+				cb.call(this, args);
+			}
 		}
 	}
-	
+
 	public Subscription on(String topic, Callback cb) {
 		String [] parts = topic.split(":");
 		ObserverList list = null;
