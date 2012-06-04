@@ -33,6 +33,17 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
+				<executions>
+					<execution>
+						<!-- I wonder if there is a better way to do this... -->
+						<!-- The issue we have here is that we need the agent jar to be built and available
+						before we run our test cases. -->
+						<phase>process-test-classes</phase> 
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
 					<archive>
 						<manifestEntries>
@@ -63,7 +74,7 @@
           			<forkMode>pertest</forkMode>
           			<argLine>-javaagent:./target/fresh_observables-1.0-SNAPSHOT.jar</argLine>
         		</configuration>
-      		</plugin>
+      		</plugin>      		
 		</plugins>
 	</build>
 </project>
