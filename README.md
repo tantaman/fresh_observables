@@ -34,6 +34,7 @@ It couldn't get any easier.
  * Allow registration & de-registration via a registration context
  * Allow registration for and emitting of custom events
  * Create a branch that works on the Android platform
+ * Make it so classes with observables don't have to extend observable
 
 ###Usage###
 
@@ -47,6 +48,12 @@ The easiest way to do that is through the `-javaagent` command line parameter.
 Fresh Observables is built using maven.  To create a jar with all required dependencies:
 
 `mvn assembly:single`
+
+or
+
+`mvn package` 
+
+to get a jar just with fresh_observables and no dependencies.
 
 
 ###Full Example###
